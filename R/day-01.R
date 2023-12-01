@@ -47,3 +47,11 @@ read_input_txt <- function(file_name) {
 
   scan(file_path, character())
 }
+
+# For solution:
+# print(solve_day_01())
+solve_day_01 <- function() {
+  input <- read_input_txt("day-01.txt")
+
+  return(calibration_sum(input))
+}
