@@ -1,0 +1,18 @@
+Package: aoc.rstats.template
+Title: Advent of Code R template
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Description: A template R package that can be used to help you take part in 
+    Advent of Code, with an example function and corresponding test file that
+    uses 'testthat' package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true
