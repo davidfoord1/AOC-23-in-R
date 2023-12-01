@@ -20,7 +20,10 @@ test_that("calibration_value() gets the first and last digit", {
 })
 
 test_that("calibration_sum() gets the sum of all calibration values", {
-  input <- "1abc2\npqr3stu8vwx\na1b2c3d5e5f\ntreb7uchet"
+  input <- c("1abc2",
+             "pqr3stu8vwx",
+             "a1b2c3d5e5f",
+             "treb7uchet")
 
   expect_equal(calibration_sum(input), 142)
 })
