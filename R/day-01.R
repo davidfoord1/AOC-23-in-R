@@ -45,7 +45,7 @@ read_input_txt <- function(file_name) {
   data_dir <- file.path("tests", "testthat", "test-data")
   file_path <- file.path(data_dir, file_name)
 
-  scan(file_path, character())
+  scan(file_path, character(), sep = "\n")
 }
 
 # For solution:
