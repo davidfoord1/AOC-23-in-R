@@ -53,3 +53,29 @@ get_numbers <- function(string) {
 
   as.numeric(data$numbers)
 }
+
+first_number <- function(string) {
+  return(get_numbers(string)[[1]])
+}
+
+last_number <- function(string) {
+  numbers <- get_numbers(string)
+
+  return(numbers[length(numbers)])
+}
+
+calibration_value2 <- function(string) {
+  as.numeric(paste0(first_number(string), last_number(string)))
+}
+
+calibration_sum2 <- function(input) {
+ values <- unlist(lapply(input, calibration_value2))
+
+ sum(as.numeric(values))
+}
+
+solve_day_01_p2 <- function() {
+  input <- read_input_txt("day-01.txt")
+
+  calibration_sum2(input)
+}
