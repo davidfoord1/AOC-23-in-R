@@ -47,13 +47,7 @@ is_possible_game <- function(game, max_cubes) {
   return(sum(possible) == 3)
 }
 
-possible_id_sum <- function(input) {
-  max_cubes <- data.frame(
-    red_max = 12,
-    green_max = 13,
-    blue_max = 14
-  )
-
+possible_id_sum <- function(input, max_cubes) {
   ids <- input |>
     lapply(
       function(string) {
@@ -74,5 +68,47 @@ possible_id_sum <- function(input) {
 solve_day_02_p1 <- function() {
   input <- read_input_txt("day-02.txt")
 
-  return(possible_id_sum(input))
+  max_cubes <- data.frame(
+    red_max = 12,
+    green_max = 13,
+    blue_max = 14
+  )
+
+  return(possible_id_sum(input, max_cubes))
 }
+
+
+# Part Two ------------------------------------------------------
+
+power_of_min_cubes <- function(game) {
+  colours <- c("red", "green", "blue")
+
+  # Extract counts from dataframe to numeric vector
+  min_counts <- lapply(colours,
+      function(colour) {
+        return(game[[paste0(eval(colour), "_highest")]])
+      }) |>
+    unlist() |>
+    as.numeric()
+
+  power <- Reduce(`*`, min_counts)
+}
+
+power_of_cubes_sum <- function(input) {
+ powers  <- input |>
+    lapply(function(string) {
+      power_of_min_cubes(game_parser(string))
+      }) |>
+    unlist() |>
+    as.numeric()
+
+  return(sum(powers))
+}
+
+solve_day_02_p2 <- function() {
+  input <- read_input_txt("day-02.txt")
+
+  return(power_of_cubes_sum(input))
+}
+
+
