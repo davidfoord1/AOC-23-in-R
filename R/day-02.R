@@ -1,3 +1,5 @@
+# Part One ------------------------------------------------------
+
 game_parser <- function(string) {
   id_regex <- "(?<=Game )[0-9]+(?=:)"
 
@@ -66,7 +68,7 @@ possible_id_sum <- function(input, max_cubes) {
 }
 
 solve_day_02_p1 <- function() {
-  input <- read_input_txt("day-02.txt")
+  input <- load_real_data("01")
 
   max_cubes <- data.frame(
     red_max = 12,
@@ -106,7 +108,7 @@ power_of_cubes_sum <- function(input) {
 }
 
 solve_day_02_p2 <- function() {
-  input <- read_input_txt("day-02.txt")
+  input <- load_real_data("02")
 
   return(power_of_cubes_sum(input))
 }
