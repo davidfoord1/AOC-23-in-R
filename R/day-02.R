@@ -10,9 +10,9 @@ game_parser <- function(string) {
 
   highest_counts <- lapply(colours,
          function(colour) {
-           regex <- paste0("(?<=(:|;|,) )[0-9]+(?= ", colour, ")")
+           regex <- paste0("(?<= )[0-9]+(?= ", colour, ")")
 
-           # Extract all matches
+           # Extract all counts for the colour
            counts <- regmatches(string, m = gregexpr(regex, string, perl = TRUE)) |>
              unlist() |>
              as.numeric()
@@ -68,7 +68,7 @@ possible_id_sum <- function(input, max_cubes) {
 }
 
 solve_day_02_p1 <- function() {
-  input <- load_real_data("01")
+  input <- load_real_data("02")
 
   max_cubes <- data.frame(
     red_max = 12,
@@ -76,7 +76,7 @@ solve_day_02_p1 <- function() {
     blue_max = 14
   )
 
-  return(possible_id_sum(input, max_cubes))
+  print(possible_id_sum(input, max_cubes))
 }
 
 
@@ -110,7 +110,7 @@ power_of_cubes_sum <- function(input) {
 solve_day_02_p2 <- function() {
   input <- load_real_data("02")
 
-  return(power_of_cubes_sum(input))
+ print(power_of_cubes_sum(input))
 }
 
 

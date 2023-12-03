@@ -48,7 +48,7 @@ calibration_sum <- function(input) {
 solve_day_01_p1 <- function() {
   input <- load_real_data("01")
 
-  return(calibration_sum(input))
+  print(calibration_sum(input))
 }
 
 # Part Two ------------------------------------------------------
@@ -132,6 +132,6 @@ calibration_sum2 <- function(input) {
 solve_day_01_p2 <- function() {
   input <- load_real_data("01")
 
-  calibration_sum2(input)
+  print(calibration_sum2(input))
 }
 
