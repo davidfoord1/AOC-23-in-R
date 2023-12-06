@@ -6,10 +6,11 @@ test_that("almanac_seeds() gets the seeds from an almanac", {
   expect_equal(almanac_seeds(input), c(79, 14, 55, 13))
 })
 
-test_that("map_source_to_destination() returns a full map of source -> destination", {
+# Part Two ------------------------------------------------------
+
+test_that("smallest_seed_location2() find the smallest location from a range", {
   input <- load_test_data("05")
 
-  expect_equals(map_source_to_destionat(input, "seed-to-soil"), )
+  expect_equal(smallest_seed_location2(input), 46)
 })
-
 
